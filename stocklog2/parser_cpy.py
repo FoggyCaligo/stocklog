@@ -3,6 +3,30 @@ from datetime import datetime, timedelta
 #from datetime import timedelta as td
 from dateutil.relativedelta import relativedelta
 
+'''
+시작날짜변경 : t s 0103 2025 || t s 0103
+종료날짜변경 : t e 0103 2025 || t e 0103
+
+시작날짜초기화 : t s r
+종료날짜 초기화 : t e r
+날짜 모두 초기화 : t r
+
+기록 : w 종목명 주가 수량
+
+결과출력 : s
+결과출력_총배당금 : s d
+결과출력_총배당수익률 : s dr
+결과출력_총수익금 : s r
+결과출력_총수익률 : s rr
+결과출력_총매수금 : s b
+결과출력_총매도금 : s s
+
+
+
+
+'''
+
+
 
 class Timer:
  def __init__(self):

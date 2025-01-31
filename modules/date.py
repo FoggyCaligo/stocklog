@@ -28,7 +28,7 @@ from dateutil.relativedelta import relativedelta
 
 
 
-class Timer:
+class Date:
  def __init__(self):
   self.start = datetime.now()
   self.end = datetime.now()-relativedelta(months=1)
@@ -67,7 +67,7 @@ class Parser:
   
  
   self.file = FileManager()
-  self.time = Timer()
+  self.time = Date()
   self.cmd = ""
 
  def translate(self, i):
