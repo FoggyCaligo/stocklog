@@ -5,9 +5,18 @@ class Main:
         self.fm = FileManager()
         self.cmd = ''
         self.isWrite = True
-
-
+    
     def main(self):
+        print('write: w')
+        print('write record: w -> stockCode price quantity')
+        print('history : h')
+        print('history search : h -> y.m.d+-y.m.d y.m.d    (empty == current)')
+        print('ㅡㅡstock Recorderㅡㅡ')
+        while(self.cmd != 'exit'):
+            self.cmd = input()
+
+
+    def test(self):
         print('write: w')
         print('write record: w -> stockCode price quantity')
         print('history : h')
@@ -29,21 +38,14 @@ class Main:
                         print('failed. please try again.')
                 else:
                     try:
-                        # print(self.fm.get_data(self.cmd))
-                        self.show_data()
+                        print(self.fm.get_data(self.cmd))
+                        # self.show_data(self.cmd)
                     except:
                         print('failed. please try again.')
-    def show_data(self):
-        data = self.fm.get_data(self.cmd)
-        print(data)
-        print('==================================')
-        # period = self.fm.dm.end-self.fm.dm.start
-        print(self.fm.dm.start, '~', self.fm.dm.start,'(',self.fm.dm.period,')')
-        print('ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ')
-        
+    def show_data(self,input):
         pass
 
 
 
 main = Main()
-main.main()
+main.test()

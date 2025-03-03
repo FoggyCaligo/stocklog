@@ -73,9 +73,6 @@ class DateManager:
         self.start = self.get_exact_date(sp[0])
         self.end = self.get_exact_date(sp[1]) + relativedelta(hours=23)
         # print(self.start,self.end)
-        self.period = self.end - self.start
-        # self.period = datetime(self.period).strftime('%Y-%m-%d')
-        # self.period = 
         return [self.start,self.end]
 
 
