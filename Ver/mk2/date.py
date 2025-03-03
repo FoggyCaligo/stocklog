@@ -9,7 +9,7 @@ today = datetime.now()
 #전역함수 : 입력 나누기 
 def split_input(input):
     # input = ' ' + input
-    print(input.split('.'))
+    # print(input.split('.'))
     return input.split('.')
 
 
@@ -72,7 +72,7 @@ class DateManager:
         sp = input.split(' ')
         self.start = self.get_exact_date(sp[0])
         self.end = self.get_exact_date(sp[1]) + relativedelta(hours=23)
-        print(self.start,self.end)
+        # print(self.start,self.end)
         return [self.start,self.end]
 
 

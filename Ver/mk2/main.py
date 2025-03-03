@@ -32,11 +32,16 @@ class Main:
                 break
             else:
                 if(self.isWrite):
-                    self.fm.record(self.cmd)
+                    try:
+                        self.fm.record(self.cmd)
+                    except:
+                        print('failed. please try again.')
                 else:
-                    print(self.fm.get_data(self.cmd))
-                    # self.show_data(self.cmd)
-                
+                    try:
+                        print(self.fm.get_data(self.cmd))
+                        # self.show_data(self.cmd)
+                    except:
+                        print('failed. please try again.')
     def show_data(self,input):
         pass
 

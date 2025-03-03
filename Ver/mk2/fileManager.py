@@ -9,8 +9,7 @@ import copy
 class FileManager:
     def __init__(self):
         # self.date = Date()
-        self.dm = DateManager()
-        # print(self.date.get_today()) 
+        self.dm = DateManager() 
         #csv 파일 읽기 or 초기화
         self.dir = './Ver/mk2/csv/record.csv'
         self.columns = ['date','code','price','qty']
@@ -35,37 +34,6 @@ class FileManager:
         new_row.set_index('date')
         self.df = pd.concat([self.df, new_row])
         self.df.to_csv(self.dir, index=False)
-
-    def find_start(self,start,end):
-        # curr = copy.deepcopy(start)
-        curr = start
-        test = None
-        while(curr<=end):
-            try:
-                test = self.df.loc[f'{curr.year}-{curr.month}-{curr.day}','date']
-                if(test != None):
-                    print(test)
-                    return test
-                
-            except:
-                curr = curr+ relativedelta(days=+1)
-        
-
-    def find_end(self,start,end):
-        # curr = copy.deepcopy(end)
-        curr = end
-        test = None
-        while(start<=curr):
-            try:
-                test = self.df.loc[f'{curr.year}-{curr.month}-{curr.day}','date']
-                if(test != None):
-                    # print(curr.strftime('%Y-%m-%d'))
-                    print(test)
-                    return test
-                # return self.df.loc(curr.strftime('%Y-%m-%d'),'date')
-            except:
-                curr = curr+ relativedelta(days=-1)
-        return test
 
     def get_data(self,input):#기간에 맞는 데이터만 가져오기
         startend = self.dm.get_start_end(input)
