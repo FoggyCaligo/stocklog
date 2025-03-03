@@ -22,21 +22,21 @@ class YM:
     self.m = self.today.month
   def update(self,cmd,se):
     #get year, month  from cmd
-    if(self.t=='orig'):v #if target is original
+    if(self.t=='orig'): #if target is original
       if re.search('y',cmd): #if 'y' in cmd
         self.y = re.match(r"^[^y]*", cmd).group() # get content before 'y'
         print('y',self.y)
       else: # if 'y' aren't in cmd
         if re.search('m',cmd):
           self.y = self.today.year
-          self.m = re.match(r"^[^m]*",cmd[len(y):-1]).group()
-          print('m',m)
+          # self.m = re.match(r"^[^m]*",cmd[len(y):-1]).group()
+          # print('m',m)
       #transform t(this) into today
       if self.y=='t':
         self.y = self.today.year
       if self.m=='t':
         self.m = self.today.month
-    else if self.t=='adj': #if target is adjust value
+    elif self.t=='adj': #if target is adjust value
       if re.search('y',cmd): #if 'y' in cmd
         self.y = re.match(r"^[^y]*", cmd).group() # get content before 'y'
         print('y',self.y)
@@ -59,7 +59,7 @@ class Date_adj:
   def trs(self,cmd):
     if re.search('-',cmd):
       self.adjust(cmd,'-')
-    else if re.search('+',cmd):
+    elif re.search('+',cmd):
       self.adjust(cmd,'+')
     
     
@@ -79,7 +79,7 @@ class Date_adj:
       rsulty = origym[0] - adjym[0]
       rsultm = origym[1] - adjym[0]
 
-    else if op=='-':
+    elif op=='-':
       rsulty = origym[0] + adjym[0]
       rsultm = origym[1] + adjym[1]
       
@@ -93,7 +93,7 @@ class Date_Manager:
       
       pass
 
-    else if re.search('+',cmd):
+    elif re.search('+',cmd):
       pass
     
   
